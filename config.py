@@ -1,4 +1,4 @@
-server = 'intel1.database.windows.net'
-ddatabase = 'intellipaat'
-username = 'intel'
-password = 'Paat@123'
+server = 'sql-server-azure-for-db.database.windows.net'
+ddatabase = 'OutputDB'
+username = 'azureuser'
+password = '#Assignment123'

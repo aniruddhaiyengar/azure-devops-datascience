@@ -12,7 +12,7 @@ from sklearn.cluster import KMeans
 
 
 def predict():
-    retail = retail = pd.read_csv("./OnlineRetail.csv", encoding='unicode_escape')
+    retail = pd.read_csv("./OnlineRetail.csv", encoding='unicode_escape')
     df_null = round(100 * (retail.isnull().sum()) / len(retail), 2)
     df_null
     # Droping rows having missing values
