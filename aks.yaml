@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: WebApp-deployment
+  labels:
+    app: my-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: myACRforDockerImage1
+        image: myacrfordockerimage1.azurecr.io/myimage1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+
+---
+
+apiVersion: v1
+  kind: Service
+  metadata:
+    name: WebApp-service
+  spec:
+    selector:
+      app: my-app
+    ports:
+      - protocol: TCP
+        name: my-app
+        port: 80
+        targetPort: 80
